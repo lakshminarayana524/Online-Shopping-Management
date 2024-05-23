@@ -1,0 +1,128 @@
+.body{
+	background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+}   
+
+.login-container {
+    max-width: 400px;
+    margin: 150px auto;
+    padding: 0 20px; /* Add padding for better readability on smaller screens */
+}
+
+.login-content {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right bottom, #a2dbfc, #9bbad4, #95dcce, #80f9fd88, #7ceae2c7);
+    padding: 20px; /* Add padding for better readability on smaller screens */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 50px auto; /* Adjust margin for smaller screens */
+    }
+}
+
+.h4-login{
+    height: fit-content;
+    width: fit-content;
+    bottom: 200px;
+    left: 90px;
+    position: relative;   
+}
+
+.form-group {
+    padding: 55px 0;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%; /* Adjust width to full width on smaller screens */
+}
+
+.input-container label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.input-container input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0;
+    margin: 13px 0;
+    font-size: 16px;
+}
+
+.input-container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #4ad44d;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+    top: -12px;
+}
+
+
+.button-login{
+    padding: 5px 6px ;
+    background-image: linear-gradient(to right bottom, #a4b3bb, #5c6770, #69f7db, #6ea18188, #7ceae2c7);
+}
+
+.button-login:hover{
+    cursor:pointer;
+    background-image: linear-gradient(to right bottom, #a4b3bb, #90e0de, #69f7db, #adfbca88, #7ceae2c7);
+
+}
+
+.signup-down{
+    text-align: center;
+    margin-top:35px
+}
+
+.span-signup:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color:#814d69
+}
+
+/* Additional adjustments for smaller screens if needed */
+@media (max-width: 480px) {
+    .input-container input {
+        font-size: 14px; /* Further decrease font size for very small screens */
+    }
+}
+
+.error-message-login{
+    color:red;
+    position: absolute;
+    top:200px;
+    animation: animate  
+                1.5s linear infinite; 
+
+}
+@keyframes animate { 
+    0% { 
+        opacity: 0; 
+    } 
+
+    50% { 
+        opacity: 0.7; 
+    } 
+
+    100% { 
+        opacity: 0; 
+    } 
+} 
+/* Other styles remain the same */

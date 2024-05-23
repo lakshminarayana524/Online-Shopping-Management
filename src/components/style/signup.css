@@ -1,0 +1,107 @@
+.signup-container {
+    max-width: 400px;
+    margin: 150px auto;
+    padding: 0 20px; /* Add padding for better readability on smaller screens */
+    position: relative; /* Add position relative */
+}
+
+.signup-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Change to align items flex-start */
+    background-image: linear-gradient(to right bottom, #a2dbfc, #9bbad4, #95dcce, #80f9fd88, #7ceae2c7);
+    padding: 20px; /* Add padding for better readability on smaller screens */
+}
+
+.h4-signup {
+    position: absolute;
+    top: 0px; /* Adjust the top position as needed */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Center the element horizontally */
+}
+
+.form-group {
+    padding: 55px 0 20px; /* Adjust padding */
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%; /* Adjust width to full width on smaller screens */
+}
+
+.input-container label {
+    position: absolute;
+    
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.input-container input {
+    border: 0;
+    border-bottom: 1px solid #555;
+    background: transparent;
+    width: 100%;
+    padding: 8px 0;
+    margin: 13px 0;
+    font-size: 16px;
+}
+
+.input-container input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #4ad44d;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: -12px;
+    font-size: 17px; /* Optionally decrease font size when input is focused or not empty */
+}
+
+
+.button-signup {
+    padding: 5px 6px;
+    background-image: linear-gradient(to right bottom, #a4b3bb, #5c6770, #69f7db, #6ea18188, #7ceae2c7);
+}
+
+.button-signup:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to right bottom, #a4b3bb, #90e0de, #69f7db, #adfbca88, #7ceae2c7);
+}
+
+.signup-down {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.span-signup:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #814d69;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Additional adjustments for smaller screens if needed */
+@media (max-width: 900px) {
+    .input-container input {
+        font-size: 14px; /* Further decrease font size for very small screens */
+    }
+
+    .h4-signup {
+        top: 10px; /* Adjust the top position as needed */
+    }
+}
+
+@media (max-width: 600px) {
+    .signup-container {
+        margin-top: 50px; /* Adjust margin for smaller screens */
+    }
+
+    h4 {
+        font-size: 20px; /* Decrease font size for smaller screens */
+    }
+}

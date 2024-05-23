@@ -1,0 +1,82 @@
+.cart-body {
+    margin: 5px;
+}
+
+.cart-container {
+    display: grid;
+    
+    width: 98%;
+}
+
+.cart-nav {
+    width: 100%;
+    height: 30px;
+    margin: 15px;
+}
+
+.cart-content {
+    display: flex; /* Use flexbox to align items */
+    
+}
+
+.card-sidebar {
+    width: 15%;
+}
+
+.cart-card {
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    background-color: rgb(199, 186, 194);
+    margin: 20px; /* Adjusted margin */
+    margin-left: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    width: 70%;
+    align-items: center; /* Center content vertically */
+    position: relative;
+}
+
+.card-deliverydate{
+    font-size: 20px;
+    position: absolute;
+    top:10px;
+    left:20px;
+    padding: 2px 5px;
+}
+
+.cart-img {
+    width: 95px; /* Set width to match image width */
+    height: 134px; /* Set height to match image height */
+    padding: 10px; /* Added padding for spacing */
+}
+
+.cart-img img {
+    width: 100%; /* Ensure image fills its container */
+    height: 100%; /* Ensure image fills its container */
+    object-fit: contain; /* Maintain aspect ratio while fitting inside */
+    display: block;
+}
+
+.cart-info {
+    padding: 10px; /* Added padding for spacing */
+    margin-left: 20px; /* Adjusted margin for spacing */
+    flex-grow: 1; /* Allow info to take up remaining space */
+}
+
+.product-name, .product-brand, .product-price {
+    margin: 0px 0px 0px 30px; /* Remove default margin */
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.cart-details {
+    padding: 10px; /* Added padding for spacing */
+}
+
+.cart-details button {
+    padding:10px;
+    margin-right: 20px; /* Added margin between buttons */
+}
