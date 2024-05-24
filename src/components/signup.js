@@ -40,7 +40,7 @@ const Signup = () => {
     // Submit the form if all conditions are satisfied
     // Add your form submission logic here
 
-    axios.post(`http://localhost:3001/signup`,{name,email,password})
+    axios.post(`https://online-shopping-management-backend.onrender.com/signup`,{name,email,password})
         .then((res)=>{
 
           if(res.data.msg==='Email already exist'){

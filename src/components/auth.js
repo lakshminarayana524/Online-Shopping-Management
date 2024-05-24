@@ -8,7 +8,7 @@ const AuthToken = ({ setuId }) => { // Pass the setuId function as a prop
   const [vmsg, setvmsg] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3001/verify')
+    axios.get('https://online-shopping-management-backend.onrender.com/verify')
       .then((res) => {
         if (res.data.msg === "No token found" || res.data.msg === "Wrong Token") {
           setvmsg(res.data.msg);

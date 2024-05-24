@@ -16,7 +16,7 @@ const Dash = ({userId}) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://localhost:3001/getproducts');
+        const response = await axios.get('https://online-shopping-management-backend.onrender.com/getproducts');
         if (response.data.msg === 'Successfully Fetched') {
           setData(response.data.result);
         } else {

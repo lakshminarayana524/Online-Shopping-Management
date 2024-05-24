@@ -33,7 +33,7 @@ const Addprojects = () => {
         file.append("colorname",colorname);
         file.append("desc", desc);
 
-        axios.post('http://localhost:3001/addProducts', file)
+        axios.post('https://online-shopping-management-backend.onrender.com/addProducts', file)
             .then(res => {
                 if (res.data.msg === "Product add Successfully") {
                     setsend(true);

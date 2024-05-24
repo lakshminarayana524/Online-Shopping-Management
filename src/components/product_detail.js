@@ -14,7 +14,7 @@ import { toast } from 'react-toastify';
       axios.defaults.withCredentials=true;
 
       useEffect(() => {
-          axios.get(`http://localhost:3001/getprod/${id}`)
+          axios.get(`https://online-shopping-management-backend.onrender.com/getprod/${id}`)
               .then(res => {
                   if (res.data.msg === "Data Fecthed  successfully!") {
                       setDetails(res.data.product);
@@ -74,7 +74,7 @@ import { toast } from 'react-toastify';
                 userID:uId,
             }
 
-            axios.post(`http://localhost:3001/addToCart`,product)
+            axios.post(`https://online-shopping-management-backend.onrender.com/addToCart`,product)
             .then(res=>{
                 if(res.data.msg==='Added To Cart'){
                     toast.success('Added To Cart');
