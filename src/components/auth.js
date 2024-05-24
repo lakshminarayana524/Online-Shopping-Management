@@ -14,7 +14,7 @@ const AuthToken = ({ setuId }) => { // Pass the setuId function as a prop
           setvmsg(res.data.msg);
           setTimeout(() => {
             navigate('/');
-          }, 100000);
+          }, 1000000000);
           toast.error(res.data.msg);
         } else {
           const userId = res.data.userId;
