@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 import './style/addProduct.css';
-import AuthToken from './auth';
+import { AuthContext } from './AuthContext';
 
 const Addprojects = () => {
     const [brand, setbrand] = useState('');
@@ -83,7 +83,7 @@ const Addprojects = () => {
     return (
         <div className='add-project'>
             <h1>Add a new project</h1>
-            <AuthToken />
+            {/* <AuthToken /> */}
             {imagepreview && (
                 <div className="image-preview">
                     <img src={imagepreview} alt="Preview" />

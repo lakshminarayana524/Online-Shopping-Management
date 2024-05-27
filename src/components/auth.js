@@ -1,38 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 
-const AuthToken = ({ setuId }) => { // Pass the setuId function as a prop
+const AuthToken = () => {
   const navigate = useNavigate();
-  const [vmsg, setvmsg] = useState('');
+  const { setUserId } = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get('https://online-shopping-management-backend.onrender.com/verify')
+    axios.get('https://online-shopping-management-backend.onrender.com/verify', { withCredentials: true })
       .then((res) => {
         if (res.data.msg === "No token found" || res.data.msg === "Wrong Token") {
-          setvmsg(res.data.msg);
+          toast.error(res.data.msg);
           setTimeout(() => {
             navigate('/');
-          }, 1000000000);
-          toast.error(res.data.msg);
+          }, 3000);
         } else {
           const userId = res.data.userId;
-          console.log("check", userId);
-          localStorage.setItem('userId', userId); // Store userId in localStorage
-          setuId(userId); // Call the passed setuId function to update state in Utilities.js
+          setUserId(userId);
+          localStorage.setItem('userId', userId);
         }
       })
       .catch(err => console.log(err));
-  }, []);
+  }, [navigate, setUserId]);
 
   return (
     <div>
-      {vmsg && (
-        <>
-          <p style={{ color: 'red' }}>{vmsg}</p>
-        </>
-      )}
       <ToastContainer />
     </div>
   );

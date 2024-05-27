@@ -1,5 +1,5 @@
   import React, { useEffect, useState,useContext } from 'react';
-  import AuthToken from './auth';
+  import {AuthContext} from './AuthContext';
   import { useNavigate, useParams } from 'react-router-dom';
   import axios from 'axios';
   import './style/product-details.css';
@@ -10,13 +10,14 @@ import { toast } from 'react-toastify';
       const [details, setDetails] = useState({});
       const [selectedSize, setSelectedSize] = useState('');
       const navigate = useNavigate();
+      const {userId}=useContext(AuthContext);
 
       axios.defaults.withCredentials=true;
 
       useEffect(() => {
           axios.get(`https://online-shopping-management-backend.onrender.com/getprod/${id}`)
               .then(res => {
-                  if (res.data.msg === "Data Fecthed  successfully!") {
+                  if (res.data.msg === "Data Fecthed Successfully!") {
                       setDetails(res.data.product);
                   }
               })
@@ -66,12 +67,14 @@ import { toast } from 'react-toastify';
         }
     };
 
-        const handleCart =()=>{
+    const uid=localStorage.getItem('userId');
+
+        const handleCart =()=>{ 
             const  product={
                 id:details._id,
                 size:selectedSize,
                 price:details.product_price,
-                userID:uId,
+                userID:userId,
             }
 
             axios.post(`https://online-shopping-management-backend.onrender.com/addToCart`,product)
@@ -82,11 +85,11 @@ import { toast } from 'react-toastify';
             })
         }
 
-        console.log(details._id,selectedSize,details.product_price,uId);
+        console.log(details._id,selectedSize,details.product_price,userId);
 
       return (
           <div className='product-body'>
-              <AuthToken />
+              {/* <AuthToken /> */}
               <div className='product-nav'>
               <button style={{ fontWeight: "50px", float: "left", marginLeft: "25px", cursor:"pointer" ,background:'transparent',boarder:'0px'}} onClick={() => navigate('/dashboard')}>&larr; Back</button>
 

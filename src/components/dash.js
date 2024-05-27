@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './style/dash.css';
-import AuthToken from './auth';
+import { AuthContext } from './AuthContext';
+import Nav from './nav'
 
 const Dash = ({userId}) => {
   const [data, setData] = useState([]);
@@ -40,12 +41,13 @@ const Dash = ({userId}) => {
 
   return (
     <div className='dashboard-body'>
-      <AuthToken />
+      {/* <AuthToken /> */}
       <div className="dashboard-container">
         <h2>DashBoard</h2>
         <button onClick={() => navigate('/add')}>Add</button>
         <button onClick={()=>navigate("/delete-product")}>Delete</button>
         <button onClick={()=>navigate("/cart")}><i class='fas fa-cart-arrow-down' style={{fontSize:"24px  "}}></i></button>
+        <Nav/>
       <div className='dashboard-nav'></div>
             <div className='dashboard-sidebar'></div>
         <div className='dashboard-content'>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './style/dash.css';
-import AuthToken from './auth';
+import { AuthContext } from './AuthContext';
 
 const Deleteproduct = () => {
   const [data, setData] = useState([]);
@@ -46,7 +46,7 @@ const Deleteproduct = () => {
 
   return (
     <div className='dashboard-body'>
-      <AuthToken />
+      {/* <AuthToken /> */}
       <div className="dashboard-container">
         <h2>Delete</h2>
       <div className='dashboard-nav'>

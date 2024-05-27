@@ -1,19 +1,23 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import './style/cart.css'
-import AuthToken from './auth';
+import { AuthContext } from './AuthContext';
 import axios from 'axios';
-import UserIdContext from './UserIdContext';
+// import UserIdContext from './UserIdContext';
 
 const Cart = () => {
 
-  const userId = useContext(UserIdContext);
+  const { userId } = useContext(AuthContext);
+  const [cartItems, setCartItems] = useState([]);
 
 console.log("Cart:",userId)
   axios.defaults.withCredentials=true;
 
+  
+
+
   return (
     <div className='cart-body'>
-      <AuthToken/>
+      {/* <AuthToken/> */}
       <div className='cart-container'>
         <div className='cart-nav'></div>
         <div className='cart-content'>
